@@ -14,8 +14,9 @@ app.get('/', (req, res) => {
 });
 
 app.get('/api/file/', (req, res) => {
+  console.log(filePath);
   fs.readFile(filePath, 'utf8', (err, data) => {
-    res.send({ platform, data });
+    res.json({ platform, filePath, data });
   });
 });
 

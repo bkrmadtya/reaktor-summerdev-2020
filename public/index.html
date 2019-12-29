@@ -9,24 +9,34 @@
   </head>
   <body onload="load()">
     <div class="container">
-      <div id="packageTable">
-        <table>
-          <thead>
-            <tr>
-              <th>No.</th>
-              <th>Package Name</th>
-            </tr>
-          </thead>
-          <tbody id="tableBody"></tbody>
-        </table>
+      <div id="system_info">
+        <h1>System Information</h1>
       </div>
-
-      <div id="packageDetail">
-        <div style="text-align: center; border: 1px solid gray; padding: 10px">
-          Click on the package name in the list to view its detail.
+      <div class="package_container">
+        <div id="packageTable" class="card curved">
+          <div class="title">
+            Package List
+          </div>
+          <div id="table_content">
+            <table>
+              <thead>
+                <tr>
+                  <th>No.</th>
+                  <th>Package Name</th>
+                </tr>
+              </thead>
+              <tbody id="tableBody"></tbody>
+            </table>
+          </div>
         </div>
+
+        <div id="packageDetail">
+          <div class="card curved" style="text-align: center; padding: 10px">
+            Click on the package name in the list to view its detail.
+          </div>
+        </div>
+        <script src="index.js"></script>
       </div>
-      <script src="index.js"></script>
     </div>
   </body>
 </html>

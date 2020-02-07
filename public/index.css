@@ -7,18 +7,28 @@ body {
   font-family: monospace, 'Courier New', Courier, monospace;
 }
 
-.package_container {
-  display: flex;
+.container {
+  margin: 0 auto;
+  padding: 1% 10%;
 }
 
-#packageTable {
+#system_info_table {
+  padding: 10px;
+}
+
+#package_table,
+#system_info {
   flex: 1;
   margin: 10px;
   align-self: flex-start;
 }
 
-#table_content {
-  height: 70vh;
+.package_container {
+  display: flex;
+}
+
+#package_list_table_content {
+  height: 60vh;
   padding: 10px;
   overflow: auto;
 }
@@ -52,7 +62,7 @@ td:nth-child(2) {
   background-color: #ffffff;
 }
 
-#packageDetail {
+#package_detail {
   flex: 1;
   text-align: left;
   margin: 10px;
@@ -89,7 +99,7 @@ pre {
 
 .title {
   padding: 20px;
-  background-color: #599da6;
+  background-color: #5987a6;
   color: #ffffff;
   border-radius: 5px 5px 0 0;
 }

@@ -1,13 +1,24 @@
 function load() {
   let packageList = [];
-  const packageDetail = document.getElementById('packageDetail');
-  const tableBody = document.getElementById('tableBody');
-  const systemInfo = document.getElementById('system_info');
+  const packageDetail = document.getElementById('package_detail');
+  const packageListTableBody = document.getElementById(
+    'package_list_table_body'
+  );
+  const systemInfoTableBody = document.getElementById('sytem_info_table_body');
 
   const displaySystemInfo = (platform, filePath, noOfPackages) => {
-    systemInfo.innerHTML += `<h3>Operating system: ${platform}</h3>`;
-    systemInfo.innerHTML += `<h3>File path: ${filePath}</h3>`;
-    systemInfo.innerHTML += `<h3>No of packages: ${noOfPackages}</h3>`;
+    systemInfoTableBody.innerHTML += `<tr>
+              <td><strong>Operating system</strong></td>
+              <td>${platform}</td>
+            </tr>
+            <tr>
+              <td><strong>File path</strong></td>
+              <td>${filePath}</td>
+            </tr>
+            <tr>
+              <td><strong>No of packages</strong></td>
+              <td>${noOfPackages}</td>
+            </tr>`;
   };
 
   const fetchFile = async () => {
@@ -125,14 +136,19 @@ function load() {
   };
 
   const addPackageToTable = () => {
-    tableBody.innerHTML += packageList
+    packageListTableBody.innerHTML += packageList
       .map(
         (item, index) =>
-          `<tr><td>
-        ${index + 1}
-        </td><td><a href="#" onclick="displayPackageInfo('${item.name}')">
-        ${item.name}
-        </a></td></tr>`
+          `<tr>
+            <td>
+              ${index + 1}
+            </td>
+            <td>
+              <a href="#" onclick="displayPackageInfo('${item.name}')">
+              ${item.name}
+              </a>
+            </td>
+          </tr>`
       )
       .join('');
   };
@@ -156,8 +172,8 @@ function load() {
 
   const getPackageInfo = package => {
     return `<div class="card curved">
-      <div class="title ">Package Info</div>
-      <div class="package curved">
+        <div class="title ">Package Info</div>
+        <div class="package curved">
       <h2>Package: ${package.name}</h2>
       <p><strong>Dependencies:</strong> ${dependenciesToLink(
         package.dependencies

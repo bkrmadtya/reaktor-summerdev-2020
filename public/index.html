@@ -8,16 +8,22 @@
     <link rel="stylesheet" href="index.css" />
   </head>
   <body onload="load()">
-    <div class="container">
-      <div id="system_info">
-        <h1>System Information</h1>
+    <div class="container ">
+      <div id="system_info" class="card curved">
+        <div class="title">
+          System Information
+        </div>
+        <table id="system_info_table">
+          <tbody id="sytem_info_table_body"></tbody>
+        </table>
       </div>
+
       <div class="package_container">
-        <div id="packageTable" class="card curved">
+        <div id="package_table" class="card curved">
           <div class="title">
             Package List
           </div>
-          <div id="table_content">
+          <div id="package_list_table_content">
             <table>
               <thead>
                 <tr>
@@ -25,12 +31,12 @@
                   <th>Package Name</th>
                 </tr>
               </thead>
-              <tbody id="tableBody"></tbody>
+              <tbody id="package_list_table_body"></tbody>
             </table>
           </div>
         </div>
 
-        <div id="packageDetail">
+        <div id="package_detail">
           <div class="card curved" style="text-align: center; padding: 10px">
             Click on the package name in the list to view its detail.
           </div>

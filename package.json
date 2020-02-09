@@ -2,17 +2,20 @@
   "name": "reaktor-pre-assignment",
   "version": "1.0.0",
   "description": "Reaktor pre-assignment for Summer job 2020",
-  "main": "app.js",
+  "main": "server.js",
   "scripts": {
-    "watch": "nodemon app.js",
-    "start": "node app.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "watch": "nodemon server.js",
+    "start": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "deploy": "git push heroku master"
   },
   "author": "Bikram Karki",
   "license": "MIT",
   "dependencies": {
     "express": "^4.17.1",
-    "fs": "0.0.1-security",
+    "fs": "0.0.1-security"
+  },
+  "devDependencies": {
     "nodemon": "^2.0.2"
   }
 }

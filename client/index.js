@@ -1,5 +1,6 @@
 function load() {
   let packageList = [];
+
   const packageDetail = document.getElementById('package_detail');
   const packageListTableBody = document.getElementById(
     'package_list_table_body'
@@ -138,6 +139,7 @@ function load() {
   };
 
   // display package info for a single package when its name is clicked
+  // the method is called each time the a link is pressed, and it is globally available hence no identifier
   displayPackageInfo = packageName => {
     const package = packageList.find(item => item.name === packageName);
     packageDetail.innerHTML = getPackageInfo(package);

@@ -20,7 +20,9 @@ app.get('/api/file/:os', (req, res) => {
   let filePath = getFilePath(req.params.os);
   console.log(filePath);
   fs.readFile(filePath, 'utf8', (err, data) => {
-    if (os !== 'linux') filePath = 'status.real (Sample file)';
+    if (os.toLowerCase().includes('linux')) {
+      filePath = 'status.real (Sample file)';
+    }
     res.json({ platform, filePath, data });
   });
 });

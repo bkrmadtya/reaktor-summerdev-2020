@@ -6,15 +6,15 @@ app.use(express.static('client'));
 
 const platform = process.platform;
 
-const filePath =
-  platform === 'linux' ? '/var/lib/dpkg/status' : `${__dirname}\\status.real`;
+const getFilePath = os =>
+  os === 'linux' ? '/var/lib/dpkg/status' : `${__dirname}\\status.real`;
 
 app.get('/', (req, res) => {
   res.sendFile('./public/index.html', { root: __dirname });
 });
 
-app.get('/api/file/', (req, res) => {
-  console.log(filePath);
+app.get('/api/file/:os', (req, res) => {
+  const filePath = getFilePath(req.params.os);
   fs.readFile(filePath, 'utf8', (err, data) => {
     res.json({ platform, filePath, data });
   });

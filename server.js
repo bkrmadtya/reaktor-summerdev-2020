@@ -27,7 +27,7 @@ app.get('/*', (req, res) => {
   </div>`);
 });
 
-const PORT = process.env.PROT || 3005;
+const PORT = process.env.PORT || 3005;
 app.listen(PORT, () => {
   console.log(`Server started on port ${PORT}`);
 });

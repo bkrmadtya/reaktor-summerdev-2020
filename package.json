@@ -4,10 +4,9 @@
   "description": "Reaktor pre-assignment for Summer job 2020",
   "main": "server.js",
   "scripts": {
-    "watch": "nodemon server.js",
     "start": "node server.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "deploy": "git push heroku master"
+    "watch": "nodemon server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Bikram Karki",
   "license": "MIT",

@@ -7,7 +7,7 @@ app.use(express.static('client'));
 const platform = process.platform;
 
 const getFilePath = os =>
-  os === 'linux' ? '/var/lib/dpkg/status' : `${__dirname}\\status.real`;
+  os === 'linux' ? '/var/lib/dpkg/status' : `./client/status.real`;
 
 app.get('/', (req, res) => {
   res.sendFile('./public/index.html', { root: __dirname });

@@ -15,6 +15,7 @@ app.get('/', (req, res) => {
 
 app.get('/api/file/:os', (req, res) => {
   const filePath = getFilePath(req.params.os);
+  console.log(filePath);
   fs.readFile(filePath, 'utf8', (err, data) => {
     res.json({ platform, filePath, data });
   });

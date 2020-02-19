@@ -7,32 +7,31 @@ function load() {
   );
   const systemInfoTableBody = document.getElementById('sytem_info_table_body');
 
-  const addSystemInfo = (os, filePath, noOfPackages) => {
+  const addSystemInfo = (platform, filePath, noOfPackages) => {
     systemInfoTableBody.innerHTML += `<tr>
-              <td width="20%"><strong>Operating system</strong></td>
-              <td width="70%">${os}</td>
-            </tr>
-            <tr>
-              <td width="20%"><strong>File path</strong></td>
-              <td width="70%">${filePath}</td>
-            </tr>
-            <tr>
-              <td width="20%"><strong>No of packages</strong></td>
-              <td width="70%">${noOfPackages}</td>
-            </tr>`;
+      <td width="20%"><strong>Platform</strong></td>
+      <td width="70%">${platform}</td>
+    </tr>
+    <tr>
+      <td width="20%"><strong>File path</strong></td>
+      <td width="70%">${filePath}</td>
+    </tr>
+    <tr>
+      <td width="20%"><strong>No of packages</strong></td>
+      <td width="70%">${noOfPackages}</td>
+    </tr>`;
   };
 
   // fetch file and system information from the server and add it to DOM
   const fetchFile = async () => {
-    const os = navigator.platform;
     try {
-      const response = await fetch(`/api/file/${os}`);
-      const { filePath, data } = await response.json();
+      const response = await fetch(`/api/file`);
+      const { platform, filePath, data } = await response.json();
 
       // split packages on basis of double consecutive line break
       const packageArray = data.trim().split(/\n{2}/);
 
-      addSystemInfo(os, filePath, packageArray.length);
+      addSystemInfo(platform, filePath, packageArray.length);
 
       fillPackageList(packageArray);
     } catch (e) {

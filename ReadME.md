@@ -67,7 +67,7 @@ When the server gets request for the file
   - the packages' detailed information is displayed in the html page
 - The dependencies and reverse dependencies are displayed as link which can clicked to view the dependency's detailed information
 
-**To run the project**
+**To run the project locally**
 
 - Clone the repository
 - npm install
@@ -76,3 +76,5 @@ When the server gets request for the file
 
 **NB:**
 The sample website is hosted on a linux system with heroku hence, it will show the information of the server system from its **/var/lib/dpkg/status**
+
+**@Bikram Karki 2020**
